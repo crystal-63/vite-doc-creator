@@ -18,11 +18,11 @@ const {
   }
 } = require('../config');
 
-function initFiles () {
+function initFiles (options) {
   console.log('initFiles')
   copyFiles('css');
   copyFiles('js');
-  createIndexHtml();
+  createIndexHtml(options);
   copyWelcomePage();
 }
 

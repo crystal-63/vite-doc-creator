@@ -1,7 +1,7 @@
 const { resolve } = require('path');
 
 // 默认端口号
-const port = process.env.npm_config_port;
+const port = process.env.npm_config_port || 3000;
 // 默认域名
 const domain = 'http://localhost';
 // 默认标题
@@ -39,18 +39,18 @@ const innerDir = {
   jsDir: resolve(__dirname, '../temp_files/js/')
 }
 
-// const regexp = {
-//   // 匹配ul menu-list内部的内容
-//   reg_ulContent: /<ul class=\"menu-list\">([\s\S]*?)<\/ul>/,
-//   // 匹配title中的内容
-//   reg_titleContent: /<title>([\s\S]*?)<\/title>/,
-//   // 匹配header-title中的内容
-//   reg_headerTitleContent: /<h1 class=\"header-title\">([\s\S]*?)<\/h1>/,
-//   // 匹配iframe page中的内容
-//   reg_iframeContent: /<div class=\"iframe-page\">([\s\S]*?)<\/div>/,
-//   // 匹配md.html内部的{{newStr}}
-//   reg_mdStr: /\{\{(.+?)\}\}/
-// }
+
+const regexp = {
+  // 匹配ul menu-list内部的内容
+  reg_ulContent: /<ul class=\"menu-list\">([\s\S]*?)<\/ul>/,
+  // 匹配title 中的内容
+  reg_titleContent: /<title>([\s\S]*?)<\/title>/,
+  // 匹配header-title中的内容
+  reg_headerTitileContent: /<h1 class=\"header-title\">([\s\S]*?)<\/h1>/,
+  // 匹配iframe page中的内容
+  reg_iframeContent: /<div class=\"iframe-page\">([\s\S]*?)<\/div>/,
+  // 匹配md.html内部的{{newStr}}
+}
 
 module.exports = {
   port,
@@ -58,5 +58,5 @@ module.exports = {
   title,
   outerPath,
   innerDir,
-  // regexp
+  regexp
 }

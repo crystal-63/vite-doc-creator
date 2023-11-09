@@ -11,7 +11,7 @@ class ViteDocCreator {
       // 页面标题
       title: undefined,
       // 程序端口号
-      port: 0,
+      port: 3000,
       // 域名配置
       domain: undefined
     }
